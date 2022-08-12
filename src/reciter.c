@@ -4,7 +4,7 @@
 #include "ReciterTabs.h"
 #include "debug.h"
 
-unsigned char A, X, Y;
+extern unsigned char A, X, Y;
 extern int debug;
 
 static unsigned char inputtemp[256];   // secure copy of input tab36096
@@ -136,7 +136,7 @@ pos36554:
     inputtemp[X] = ' ';
     mem56++;
     X = mem56;
-    if (X > 120) goto pos36654;
+    //if (X > 120) goto pos36654;
     input[X] = A;
     goto pos36554;
 

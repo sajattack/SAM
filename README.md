@@ -1,3 +1,8 @@
+Sajattack's Fork
+================
+Check out the SAM-unleashed branch for a version of SAM capable of longer speech than the original version from s-macke.
+
+
 SAM
 ===
 

@@ -107,7 +107,6 @@ unsigned char Read(unsigned char p, unsigned char Y)
     case 173: return amplitude2[Y];
     case 174: return amplitude3[Y];
     }
-    fprintf(stderr,"Error reading to tables");
     return 0;
 }
 
@@ -124,7 +123,6 @@ void Write(unsigned char p, unsigned char Y, unsigned char value)
     case 173: amplitude2[Y] = value;  return;
     case 174: amplitude3[Y] = value;  return;
     }
-    fprintf(stderr,"Error writing to tables\n");
 }
 
 
@@ -778,10 +776,6 @@ do
     X = A;
     mem38 = A - (A>>2);     // 3/4*A ???
 
-if (sam_debug)
-{
-    PrintOutput(sampledConsonantFlag, frequency1, frequency2, frequency3, amplitude1, amplitude2, amplitude3, pitches);
-}
 
 // PROCESS THE FRAMES
 //

@@ -3,7 +3,6 @@
 #include "debug.h"
 
 unsigned char A, X, Y;
-extern int sam_debug;
 
 static unsigned char inputtemp[256];   // secure copy of input tab36096
 
@@ -523,9 +522,6 @@ pos37440:
 pos37455:
     Y = mem64;
     mem61 = mem60;
-
-    if (sam_debug)
-        PrintRule(mem62);
 
 pos37461:
     //37461: LDA (62),y

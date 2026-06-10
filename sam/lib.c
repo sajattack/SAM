@@ -16,17 +16,18 @@ void setupSpeak(unsigned char pitch,unsigned char speed,unsigned char throat,uns
     SetMouth(mouth == 0 ? 128 : mouth);
 }
 
+int toUpper(int ch) {
+   return ch - 32; 
+}
+
 struct AudioResult* speakText(char *input)
 {
     int i;
     for(i=0; input[i] != 0; i++)
-        input[i] = toupper((int)input[i]);
+        input[i] = toUpper((int)input[i]);
     strncat(input, "[", 255);
 
     TextToPhonemes((unsigned char*) input);
-    if (sam_debug) {
-        fprintf(stderr,"Phonemes: %s\n",input);
-    }
     SetInput(input);
     struct AudioResult *resp = malloc(sizeof(struct AudioResult));
     resp -> res = SAMMain();

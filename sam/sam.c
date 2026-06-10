@@ -13,8 +13,6 @@ unsigned char mouth = 128;
 unsigned char throat = 128;
 int singmode = 0;
 
-extern int sam_debug;
-
 unsigned char mem39;
 unsigned char mem44;
 unsigned char mem47;
@@ -140,8 +138,6 @@ int SAMMain()
     phonemeindex[255] = 32; //to prevent buffer overflow
 
     if (!Parser1()) return 0;
-    if (sam_debug)
-        PrintPhonemes(phonemeindex, phonemeLength, stress);
     Parser2();
     CopyStress();
     SetPhonemeLength();
@@ -162,10 +158,6 @@ int SAMMain()
     InsertBreath();
 
     //mem[40158] = 255;
-    if (sam_debug)
-    {
-        PrintPhonemes(phonemeindex, phonemeLength, stress);
-    }
 
     PrepareOutput();
 

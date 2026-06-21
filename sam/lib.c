@@ -17,7 +17,7 @@ void setupSpeak(unsigned char pitch,unsigned char speed,unsigned char throat,uns
 }
 
 int toUpper(int ch) {
-   return ch - 32; 
+   return (ch >= 97 && ch < 123 ) ? ch - 32: ch; 
 }
 
 struct AudioResult* speakText(char *input)
